@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction</title>
+</head>
+<body>
+    <h1>Churn Prediction</h1>
+    <p>Enter the following features to predict churn:</p>
+    <form method="POST" action="/predict">
+        <label for="tenure">Tenure:</label>
+        <input type="text" id="tenure" name="tenure" required><br>
+
+        <label for="monthlyCharges">Monthly Charges:</label>
+        <input type="text" id="monthlyCharges" name="monthlyCharges" required><br>
+
+        <label for="internetService">Internet Service (Fiber Optic):</label>
+        <input type="text" id="internetService" name="internetService" required><br>
+
+        <label for="onlineSecurity">Online Security (No):</label>
+        <input type="text" id="onlineSecurity" name="onlineSecurity" required><br>
+
+        <label for="deviceProtection">Device Protection (No Internet Service):</label>
+        <input type="text" id="deviceProtection" name="deviceProtection" required><br>
+
+        <label for="techSupport">Tech Support (No):</label>
+        <input type="text" id="techSupport" name="techSupport" required><br>
+
+        <label for="streamingTV">Streaming TV (No Internet Service):</label>
+        <input type="text" id="streamingTV" name="streamingTV" required><br>
+
+        <label for="streamingMovies">Streaming Movies (No Internet Service):</label>
+        <input type="text" id="streamingMovies" name="streamingMovies" required><br>
+
+        <label for="contract">Contract (Month-to-Month or Two Year):</label>
+        <input type="text" id="contract" name="contract" required><br>
+
+        <label for="paymentMethod">Payment Method (Electronic Check):</label>
+        <input type="text" id="paymentMethod" name="paymentMethod" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
